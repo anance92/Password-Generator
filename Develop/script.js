@@ -29,7 +29,16 @@ const generatePassword = () => {
   newPasswordLength = getPasswordLength();
 
   // need to have special characters or not
-
+  let getCharTypes = () => {
+    // lowercase
+    let charLowerCase = window.prompt("Would you like your password to contain lowercase characters? Please type yes or no.").toLowerCase();
+    if (charLowerCase === "yes") { charLowerCase = alphabet }
+    else if (charLowerCase === "no") { charLowerCase = null }
+    else {
+      window.alert("Please choose yes or no!");
+      return getCharTypes();
+    }
+  }
   return password;
 }
 
